@@ -1,3 +1,45 @@
 body{
-  background-color: black;
+    background-color: black;
+}
+.user-service {
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-right: 20px;
+}
+
+.user-service + .user-service {
+    margin-left: 90px;
+}
+
+.user-service:hover{
+    background-color: black;
+    padding: 15px 25px;
+}
+
+.logout{
+    color: white;
+    text-decoration: none;
+}
+
+.logout-button{
+    display: flex;
+    margin-top: 80px;
+}
+
+.button-home{
+    font-size: 20px;
+    color: black;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+.button-home:hover{
+    transition: background-color 0.5s ease, padding 0.5s ease;
+    color: white;
+    background-color: black;
+
 }

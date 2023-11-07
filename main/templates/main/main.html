@@ -75,7 +75,7 @@
         </ul>
       </nav>
       {% if request.user.is_authenticated %}
-      <p>Hello, {{request.user}}</p>
+      <a href="{% url 'detail_user' %}" class='users'><p>Hello, {{request.user}}</p></a>
       {% else %}
       <a href="{% url 'user_register' %}" class="btn btn-primary">
         <span class="">Registration</span>

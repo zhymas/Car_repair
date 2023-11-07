@@ -36,3 +36,6 @@ def logout_user(request):
     logout(request)
     return redirect('home')
 
+
+def service(request):
+    return render(request, 'user/service.html')
