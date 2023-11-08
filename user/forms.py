@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from .models import RegistrationCar
 
 
 class UserRegisterForm(UserCreationForm):
@@ -36,3 +37,16 @@ class LoginUserForm(AuthenticationForm):
         strip=False,
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
     )
+
+
+class RegistrationCarForm(forms.ModelForm):
+    class Meta:
+        model = RegistrationCar
+        fields = '__all__'
+        exclude = ['user', 'status']
+
+        widgets = {
+            'model_of_car': forms.TextInput(attrs={'class': 'form-control'}),
+            'type_of_problem': forms.TextInput(attrs={'class': 'form-control'}),
+            'visit_time': forms.DateTimeInput()
+        }
