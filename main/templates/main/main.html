@@ -63,15 +63,23 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="{% url 'about' %}" class="navbar-link">About</a>
+            <a href="#about" class="navbar-link">About</a>
           </li>
 
 
 
           <li>
-            <a href="{% url 'contact' %}" class="navbar-link">Contact</a>
+            <a href="#contact" class="navbar-link">Contact</a>
           </li>
 
+          {% if request.user.is_authenticated %}
+          <li>
+            <a href="{% url 'service' %}" class="navbar-link">Service</a>
+          </li>
+          <li>
+            <a href="{% url 'users_records' %}" class="navbar-link">My records</a>
+          </li>
+          {% endif %}
         </ul>
       </nav>
       {% if request.user.is_authenticated %}
@@ -251,8 +259,8 @@
 
           </ul>
 
-          <a href="#" class="btn">
-            <span class="span">View All Services</span>
+          <a href="{% url 'service' %}" class="btn">
+            <span class="span">Services</span>
 
             <span class="material-symbols-rounded">arrow_forward</span>
           </a>
@@ -268,7 +276,7 @@
         - #ABOUT
       -->
 
-      <section class="section about has-before" aria-labelledby="about-label">
+      <section id="about" class="section about has-before" aria-labelledby="about-label">
         <div class="container">
 
           <figure class="about-banner">
@@ -354,7 +362,7 @@
                   <h3 class="h3 card-title">Engine Repair</h3>
 
                   <a href="#" class="card-btn">
-                    <span class="material-symbols-rounded">arrow_forward</span>
+                    <span class="material-symbols-rounded">done</span>
                   </a>
                 </div>
 
@@ -375,7 +383,7 @@
                   <h3 class="h3 card-title">Car Tyre change</h3>
 
                   <a href="#" class="card-btn">
-                    <span class="material-symbols-rounded">arrow_forward</span>
+                    <span class="material-symbols-rounded">done</span>
                   </a>
                 </div>
 
@@ -396,7 +404,7 @@
                   <h3 class="h3 card-title">Battery Adjust</h3>
 
                   <a href="#" class="card-btn">
-                    <span class="material-symbols-rounded">arrow_forward</span>
+                    <span class="material-symbols-rounded">done</span>
                   </a>
                 </div>
 
@@ -419,7 +427,7 @@
     - #FOOTER
   -->
 
-  <footer class="footer">
+  <footer id="contact" class="footer">
 
     <div class="footer-top section">
       <div class="container">
@@ -431,7 +439,7 @@
           </a>
 
           <p class="footer-text">
-            Text
+
           </p>
 
           <ul class="social-list">

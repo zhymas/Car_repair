@@ -5,7 +5,7 @@ body{
     color: white;
     text-decoration: none;
     background-color: red;
-    transition: background-color 0.3s ease, padding 0.3s ease;
+    transition: background-color 0.5s ease, padding 0.5s ease;
     border-radius: 20px;
     padding: 25px 30px;
     margin-right: 20px;
@@ -17,7 +17,7 @@ body{
 
 .user-service:hover{
     background-color: black;
-    padding: 15px 25px;
+
 }
 
 .logout{
@@ -61,4 +61,31 @@ body{
 
 .type-problem::placeholder {
   transform: translateY(-80px);
+}
+
+.logo-service{
+    display: flex;
+    margin-top: 30px;
+}
+
+.logo-logo{
+    position: fixed;
+    right: 58%;
+
+}
+
+.select-cars{
+    text-decoration: none;
+    color: black;
+}
+
+.img-logo{
+    flex-direction: column
+}
+
+.date-time{
+    color: grey;
+    font-size: 12px;
+    display: flex;
+
 }

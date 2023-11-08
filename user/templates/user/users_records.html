@@ -1,0 +1,26 @@
+{% extends 'user/detail_user.html' %}
+{% load static %}
+{% block title %} Records {% endblock %}
+{% block content %}
+<div><a href="{% url 'home' %}" class="button-home"><i class="fa-solid fa-arrow-left"></i></a></div>
+{% for car in cars %}
+<div>
+    <a href="" class="select-cars">
+    <div class="img-logo logo-service">
+        <img class="logo-logo" src="{% static 'main/img/logo.png' %}" width="100" height="50">
+        <div>
+            <p class="model-car">{{ car.model_of_car }}</p>
+        </div>
+        <div>
+            <p class="date-time">{{ car.visit_date }} - {{car.visit_time}}</p>
+            <p class="date-time">Status: {{car.status}}</p>
+        </div>
+
+    </div>
+    <br>
+    <hr>
+        </a>
+</div>
+{% endfor %}
+
+{% endblock %}

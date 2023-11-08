@@ -9,6 +9,22 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link rel="stylesheet" href="{% static 'user/css/style.css' %}">
     <script src="https://kit.fontawesome.com/49151ea818.js" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentDateTime = new Date();
+        var currentHours = currentDateTime.getHours();
+        var currentMinutes = currentDateTime.getMinutes();
+        var currentFormattedTime = currentHours + ':' + (currentMinutes < 10 ? '0' : '') + currentMinutes;
+
+        var timeSelect = document.getElementById("time");
+        var options = timeSelect.options;
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].value < currentFormattedTime) {
+                options[i].disabled = true;
+            }
+        }
+    });
+</script>
     <title>Service</title>
 </head>
 <body>
@@ -17,7 +33,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
-              <div><a href="{% url 'detail_user' %}" class="button-home"><i class="fa-solid fa-arrow-left"></i></a></div>
+              <div><a href="{% url 'home' %}" class="button-home"><i class="fa-solid fa-arrow-left"></i></a></div>
               <div class="img-logo"><img src="{% static 'main/img/logo.png' %}" width="128" height="63"></div>
               <form action="" method="post">
                   {% csrf_token %}
