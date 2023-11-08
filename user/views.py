@@ -39,7 +39,6 @@ def logout_user(request):
 
 
 def service(request):
-
     if request.user.is_authenticated:
         all_time = [
             '09:00', '10:00',
