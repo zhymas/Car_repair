@@ -1,6 +1,6 @@
 ## Service station
 
-Service station is a project for the convenience of user registration. The project was developed using Django to achieve the comfort of service users
+Service station is a project for the convenience of user. The project was developed using Django to achieve the comfort of service users
 
 Main functions:
 
